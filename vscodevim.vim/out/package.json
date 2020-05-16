@@ -59,12 +59,24 @@
         "title": "Vim: Find Cur Word"
       },
       {
+        "command": "vim.findCurWordInsert",
+        "title": "Vim: Find Cur Word"
+      },
+      {
         "command": "vim.delCurWord",
         "title": "Vim: Del Cur Word"
       },
       {
+        "command": "vim.delCurWordInsert",
+        "title": "Vim: Del Cur Word Insert"
+      },
+      {
         "command": "vim.moveRightCurWord",
         "title": "Vim: Move Right Cur Word"
+      },
+      {
+        "command": "vim.moveRightCurWordInsert",
+        "title": "Vim: Move Right Cur Word Insert"
       },
       {
         "command": "vim.editVimrc",
