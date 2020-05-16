@@ -1,0 +1,298 @@
+{
+	"name": "syntax-highlighter",
+	"displayName": "Syntax Highlighter",
+	"description": "Syntax highlighting based on Tree-sitter",
+	"homepage": "https://github.com/EvgeniyPeshkov/syntax-highlighter",
+	"version": "0.4.4",
+	"publisher": "evgeniypeshkov",
+	"license": "MIT",
+	"icon": "images/syntax.png",
+	"galleryBanner": {
+		"color": "#263238",
+		"theme": "dark"
+	},
+	"repository": {
+		"url": "https://github.com/EvgeniyPeshkov/syntax-highlighter"
+	},
+	"author": {
+		"name": "Evgeniy Peshkov",
+		"email": "peshkov.e@outlook.com"
+	},
+	"categories": [
+		"Programming Languages",
+		"Themes",
+		"Other"
+	],
+	"keywords": [
+		"Syntax",
+		"Highlighter",
+		"Highlight",
+		"Highlighting",
+		"Coloring",
+		"Tree-Sitter",
+		"Parser",
+		"C",
+		"C++",
+		"CPP",
+		"Python",
+		"TypeScript",
+		"TS",
+		"TypeScriptReact",
+		"TSX",
+		"JavaScript",
+		"JS",
+		"Go",
+		"Rust",
+		"Php",
+		"Ruby",
+		"ShellScript",
+		"Bash",
+		"OCaml",
+		"Lua"
+	],
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"activationEvents": [
+		"onLanguage:c",
+		"onLanguage:cpp",
+		"onLanguage:python",
+		"onLanguage:typescript",
+		"onLanguage:typescriptreact",
+		"onLanguage:javascript",
+		"onLanguage:go",
+		"onLanguage:rust",
+		"onLanguage:php",
+		"onLanguage:ruby",
+		"onLanguage:shellscript",
+		"onLanguage:ocaml",
+		"onLanguage:lua"
+	],
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"vscode:package": "node ./node_modules/.bin/vsce package",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./scripts/build.js"
+	},
+	"dependencies": {
+		"jsonc-parser": "^2.2.1",
+		"web-tree-sitter": "^0.16.0"
+	},
+	"devDependencies": {
+		"@types/node": "^13.7.2",
+		"@types/vscode": "^1.37.0",
+		"tslint": "^6.1.0",
+		"typescript": "^3.8.3",
+		"vsce": "^1.73.0",
+		"tree-sitter": "^0.16.0",
+		"tree-sitter-cli": "^0.16.4",
+		"tree-sitter-cpp": "^0.16.0",
+		"tree-sitter-c": "^0.16.0",
+		"tree-sitter-python": "^0.16.0",
+		"tree-sitter-typescript": "^0.16.1",
+		"tree-sitter-javascript": "^0.16.0",
+		"tree-sitter-go": "^0.16.0",
+		"tree-sitter-rust": "^0.16.0",
+		"tree-sitter-php": "^0.16.1",
+		"tree-sitter-ruby": "^0.16.1",
+		"tree-sitter-bash": "^0.16.0",
+		"tree-sitter-ocaml": "github:tree-sitter/tree-sitter-ocaml#9e4f226",
+		"tree-sitter-lua": "^1.6.0"
+	},
+	"contributes": {
+		"colors": [
+			{
+				"id": "syntax.type",
+				"description": "Color for types (class, struct, enum)",
+				"defaults": {
+					"dark": "#26A69A",
+					"light": "#26A69A",
+					"highContrast": "#26A69A"
+				}
+			},
+			{
+				"id": "syntax.scope",
+				"description": "Color for scopes (namespace, module, outer class)",
+				"defaults": {
+					"dark": "#00897B",
+					"light": "#00897B",
+					"highContrast": "#00897B"
+				}
+			},
+			{
+				"id": "syntax.function",
+				"description": "Color for functions (function, method, interface)",
+				"defaults": {
+					"dark": "#00BCD4",
+					"light": "#00BCD4",
+					"highContrast": "#00BCD4"
+				}
+			},
+			{
+				"id": "syntax.variable",
+				"description": "Color for variables (variable, field, property)",
+				"defaults": {
+					"dark": "#42A5F5",
+					"light": "#42A5F5",
+					"highContrast": "#42A5F5"
+				}
+			},
+			{
+				"id": "syntax.string",
+				"description": "Color for strings (string, regex, char)",
+				"defaults": {
+					"dark": "#90A4AE",
+					"light": "#90A4AE",
+					"highContrast": "#90A4AE"
+				}
+			},
+			{
+				"id": "syntax.number",
+				"description": "Color for numbers (10, 10.0f)",
+				"defaults": {
+					"dark": "#90A4AE",
+					"light": "#90A4AE",
+					"highContrast": "#90A4AE"
+				}
+			},
+			{
+				"id": "syntax.punctuation",
+				"description": "Color for punctuation (., :, {)",
+				"defaults": {
+					"dark": "#A1887F",
+					"light": "#A1887F",
+					"highContrast": "#A1887F"
+				}
+			},
+			{
+				"id": "syntax.macro",
+				"description": "Color for macro",
+				"defaults": {
+					"dark": "#A1887F",
+					"light": "#A1887F",
+					"highContrast": "#A1887F"
+				}
+			},
+			{
+				"id": "syntax.comment",
+				"description": "Color for comments",
+				"defaults": {
+					"dark": "#546E7A",
+					"light": "#546E7A",
+					"highContrast": "#546E7A"
+				}
+			},
+			{
+				"id": "syntax.constant",
+				"description": "Color for constants (true, nullptr, nil)",
+				"defaults": {
+					"dark": "#A89F9B",
+					"light": "#A89F9B",
+					"highContrast": "#A89F9B"
+				}
+			},
+			{
+				"id": "syntax.directive",
+				"description": "Color for directives (#include, import, use)",
+				"defaults": {
+					"dark": "#7E57C2",
+					"light": "#7E57C2",
+					"highContrast": "#7E57C2"
+				}
+			},
+			{
+				"id": "syntax.control",
+				"description": "Color for control flow (if, continue, return)",
+				"defaults": {
+					"dark": "#7986CB",
+					"light": "#7986CB",
+					"highContrast": "#7986CB"
+				}
+			},
+			{
+				"id": "syntax.operator",
+				"description": "Color for operators (+=, ->, ::)",
+				"defaults": {
+					"dark": "#9575CD",
+					"light": "#9575CD",
+					"highContrast": "#9575CD"
+				}
+			},
+			{
+				"id": "syntax.modifier",
+				"description": "Color for modifiers (const, public, override)",
+				"defaults": {
+					"dark": "#00897B",
+					"light": "#00897B",
+					"highContrast": "#00897B"
+				}
+			}
+		],
+		"configuration": {
+			"title": "{Syntax Highlighter} configuration",
+			"properties": {
+				"syntax.highlightComment": {
+					"description": "Enable highlighting of comments",
+					"type": "boolean",
+					"default": true
+				},
+				"syntax.highlightLanguages": {
+					"description": "Enabled languages",
+					"type": "array",
+					"default": [
+						"c",
+						"cpp",
+						"python",
+						"typescript",
+						"typescriptreact",
+						"javascript",
+						"go",
+						"rust",
+						"php",
+						"ruby",
+						"shellscript",
+						"ocaml",
+						"lua"
+					]
+				},
+				"syntax.highlightTerms": {
+					"description": "Enabled terms",
+					"type": "array",
+					"default": [
+						"type",
+						"scope",
+						"function",
+						"variable",
+						"number",
+						"string",
+						"comment",
+						"constant",
+						"directive",
+						"control",
+						"operator",
+						"modifier",
+						"punctuation",
+						"macro"
+					]
+				},
+				"syntax.debugHover": {
+					"description": "Show tool-tip with syntax scope on hover",
+					"type": "boolean",
+					"default": false
+				},
+				"syntax.debugDepth": {
+					"description": "Depth of syntax scope in debug tools",
+					"type": "integer",
+					"default": -1
+				}
+			}
+		}
+	},
+	"__metadata": {
+		"id": "428c36f5-be8e-4df8-8992-233bf5aef31f",
+		"publisherId": "ea732491-c233-4bad-9df1-d0cafdf9a310",
+		"publisherDisplayName": "Evgeniy Peshkov"
+	}
+}

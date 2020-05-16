@@ -1,0 +1,17 @@
+A(e, "vim.delCurWord", async () => { const e = await M(); await e.handleMultipleKeyEvents(['d', 'w'])}), A(e, "vim.moveRightCurWord", async () => { const e = await M(); await e.handleKeyEvent('w') }), A(e, "vim.findCurWord", async () => { const e = await M(); await e.handleKeyEvent('*') }), A(e, "vim.showQuickpickCmdLine",
+
+{"command":"vim.findCurWord","title":"Vim: Find Cur Word},{"command":"vim.delCurWord","title":"Vim: Del Cur Word"},{"command":"vim.moveRightCurWord","title":"Vim: Move Right Cur Word"},{"command":"vim.showQuickpickCmdLine","title":"Vim: Show Command Line"},
+
+
+      {
+        "command": "vim.findCurWord",
+        "title": "Vim: Find Cur Word"
+      },
+      {
+        "command": "vim.delCurWord",
+        "title": "Vim: Del Cur Word"
+      },
+      {
+        "command": "vim.moveRightCurWord",
+        "title": "Vim: Move Right Cur Word"
+      },
